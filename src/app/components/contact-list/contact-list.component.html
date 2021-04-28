@@ -1,0 +1,16 @@
+<table *ngIf="contacts$ | async" style="width: 100%">
+  <tr>
+    <th>Lastname</th>
+    <th>Firstname</th>
+    <th>Phone number</th>
+    <th>Email</th>
+    <th>Address</th>
+  </tr>
+  <tr *ngFor="let contact of contacts$ | async">
+    <td>{{ contact.lastName }}</td>
+    <td>{{ contact.firstName }}</td>
+    <td>{{ contact.phone }}</td>
+    <td>{{ contact.email }}</td>
+    <td>{{ contact.address }}</td>
+  </tr>
+</table>

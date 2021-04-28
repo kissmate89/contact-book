@@ -7,9 +7,12 @@ import { contactsReducer } from "./store/reducers/contacts.reducer"
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { ContactListComponent } from './components/contact-list/contact-list.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ContactListComponent
   ],
   imports: [
     BrowserModule,
