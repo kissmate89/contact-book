@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+
+import { ContactModel } from './models/contact.model';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +10,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'contact-book';
+  contacts$: Observable<ContactModel[]>
+
+  constructor(private store: Store<{ contacts: ContactModel[] }>) {
+    this.contacts$ = store.select('contacts');
+  }
 }
