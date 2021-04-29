@@ -1,0 +1,24 @@
+<form [formGroup]="contactForm" (submit)="addContact()">
+  <label>
+    Firstname:
+    <input type="text" required name="firstName" formControlName="firstName" />
+  </label>
+  <label>
+    Lastname:
+    <input type="text" required name="lastName" formControlName="lastName" />
+  </label>
+  <label>
+    Phone number:
+    <input type="text" required name="phone" formControlName="phone" />
+  </label>
+  <label>
+    Email:
+    <input type="text" required name="email" formControlName="email" />
+  </label>
+  <label>
+    Address:
+    <input type="textarea" required name="address" formControlName="address" />
+  </label>
+
+  <button>Add</button>
+</form>

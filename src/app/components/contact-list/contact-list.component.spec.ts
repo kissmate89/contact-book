@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideMockStore, MockStore } from '@ngrx/store/testing';
-import { ContactModel } from 'src/app/models/contact.model';
 
 import { ContactListComponent } from './contact-list.component';
 
@@ -36,6 +35,7 @@ describe('ContactListComponent', () => {
 
   it("should show table if there are contacts", () => {
     store.setState({contacts: [{
+      id: "knsdfknsldf",
       firstName: "Jane",
       lastName: "Doe",
       phone: "593982",
