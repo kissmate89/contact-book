@@ -1,5 +1,5 @@
 import { Action, ActionReducer, createReducer, on } from '@ngrx/store';
-import { ContactModel } from '../../models/contact.model';
+import { ContactI } from '../../models/contact.interface';
 
 import { addContactsAction } from '../actions/contacts.actions';
 
@@ -10,7 +10,7 @@ const guidGenerator = () => {
   return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
 }
 
-export const initialState: ContactModel[] = []
+export const initialState: ContactI[] = []
 
 const _contactsReducer = createReducer(
   initialState,
@@ -19,4 +19,4 @@ const _contactsReducer = createReducer(
   )
 )
 
-export const contactsReducer: ActionReducer<ContactModel[], Action> = (state, action) => _contactsReducer(state, action);
+export const contactsReducer: ActionReducer<ContactI[], Action> = (state, action) => _contactsReducer(state, action);

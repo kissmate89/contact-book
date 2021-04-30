@@ -3,9 +3,10 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import { changeView } from 'src/app/store/actions/app.actions';
-import { ViewEnum } from 'src/app/store/reducers/app.reducer';
-import { AppStateI, getContact } from 'src/app/store/selectors';
-import { ContactModel } from 'src/app/models/contact.model';
+import { getContact } from 'src/app/store/selectors';
+import { ContactI } from 'src/app/models/contact.interface';
+import { ViewEnum } from 'src/app/models/view.enum';
+import { StateI } from 'src/app/models/state.interface';
 
 @Component({
   selector: 'app-contact-view',
@@ -13,9 +14,9 @@ import { ContactModel } from 'src/app/models/contact.model';
   styleUrls: ['./contact-view.component.scss']
 })
 export class ContactViewComponent {
-  contact$: Observable<ContactModel>;
+  contact$: Observable<ContactI>;
 
-  constructor(private store: Store<AppStateI>) {
+  constructor(private store: Store<StateI>) {
     this.contact$ = store.select(getContact);
   }
 

@@ -1,5 +1,4 @@
 import { createAction, props  } from '@ngrx/store';
-import { ContactModel } from 'src/app/models/contact.model';
+import { ContactI } from 'src/app/models/contact.interface';
 
-export const getContactsAction = createAction('[Contacts] GET CONTACTS')
-export const addContactsAction = createAction('[Contacts] ADD CONTACT', props<{contact: ContactModel}>())
+export const addContactsAction = createAction('[Contacts] ADD CONTACT', props<{contact: ContactI}>())

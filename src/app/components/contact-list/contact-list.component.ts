@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { ContactModel } from 'src/app/models/contact.model';
+import { ContactI } from 'src/app/models/contact.interface';
+import { StateI } from 'src/app/models/state.interface';
+import { ViewEnum } from 'src/app/models/view.enum';
 import { changeView } from 'src/app/store/actions/app.actions';
-import { ViewEnum } from 'src/app/store/reducers/app.reducer';
-import { AppStateI } from 'src/app/store/selectors';
 
 @Component({
   selector: 'app-contact-list',
@@ -13,9 +13,9 @@ import { AppStateI } from 'src/app/store/selectors';
   styleUrls: ['./contact-list.component.scss']
 })
 export class ContactListComponent {
-  contacts$: Observable<ContactModel[]>;
+  contacts$: Observable<ContactI[]>;
 
-  constructor(private store: Store<AppStateI>) {
+  constructor(private store: Store<StateI>) {
     this.contacts$ = this.store.select(state => state.contacts);
   }
 

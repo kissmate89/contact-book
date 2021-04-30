@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { AppStateModel, ViewEnum } from './store/reducers/app.reducer';
+import { ViewEnum } from './models/view.enum';
+import { StateI } from './models/state.interface';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,7 @@ export class AppComponent {
   title: string = 'contact-book';
   currentView: Observable<ViewEnum>;
 
-  constructor(private store: Store<{app: AppStateModel}>) {
+  constructor(private store: Store<StateI>) {
     this.currentView = this.store.select(state => state.app.view);
   }
 
