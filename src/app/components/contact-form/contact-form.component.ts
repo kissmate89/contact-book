@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { ContactModel } from 'src/app/models/contact.model';
+
 import { addContactsAction } from 'src/app/store/actions/contacts.actions';
+import { AppStateI } from 'src/app/store/selectors';
 
 @Component({
   selector: 'app-contact-form',
@@ -19,7 +20,7 @@ export class ContactFormComponent {
     address: new FormControl(''),
   })
 
-  constructor(private store: Store<{ contacts: ContactModel[] }>) { }
+  constructor(private store: Store<AppStateI>) { }
 
   addContact() {
     this.store.dispatch(addContactsAction({ contact: this.contactForm.value }))

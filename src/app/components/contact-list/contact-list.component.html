@@ -1,3 +1,4 @@
+<h2>Contact list</h2>
 <table *ngIf="contacts$ | async" style="width: 100%">
   <tr>
     <th>Lastname</th>
@@ -5,6 +6,7 @@
     <th>Phone number</th>
     <th>Email</th>
     <th>Address</th>
+    <th></th>
   </tr>
   <tr *ngFor="let contact of contacts$ | async">
     <td>{{ contact.lastName }}</td>
@@ -12,5 +14,6 @@
     <td>{{ contact.phone }}</td>
     <td>{{ contact.email }}</td>
     <td>{{ contact.address }}</td>
+    <td><button (click)="selectContact(contact.id)">View</button></td>
   </tr>
 </table>

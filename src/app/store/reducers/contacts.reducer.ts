@@ -10,14 +10,7 @@ const guidGenerator = () => {
   return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
 }
 
-export const initialState: ContactModel[] = [{
-  id: "klmknlasdklnasdknasd",
-  firstName: "Jane",
-  lastName: "Doe",
-  phone: "593982",
-  email: "janey@doe.com",
-  address: "Somewhere in the world",
-}]
+export const initialState: ContactModel[] = []
 
 const _contactsReducer = createReducer(
   initialState,
@@ -27,4 +20,3 @@ const _contactsReducer = createReducer(
 )
 
 export const contactsReducer: ActionReducer<ContactModel[], Action> = (state, action) => _contactsReducer(state, action);
-

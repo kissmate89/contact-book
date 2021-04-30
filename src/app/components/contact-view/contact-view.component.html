@@ -1,5 +1,8 @@
-<p><strong>Firstname:</strong> {{ contact.firstName }}</p>
-<p><strong>Lastname:</strong> {{ contact.lastName }}</p>
-<p><strong>Phone number:</strong> {{ contact.phone }}</p>
-<p><strong>Email:</strong> {{ contact.email }}</p>
-<p><strong>Address:</strong> {{ contact.address }}</p>
+<button (click)="goBackToForm()">Go back</button>
+<div *ngIf="contact$ | async; let contact">
+  <p><strong>Firstname:</strong> {{ contact.firstName }}</p>
+  <p><strong>Lastname:</strong> {{ contact.lastName }}</p>
+  <p><strong>Phone number:</strong> {{ contact.phone }}</p>
+  <p><strong>Email:</strong> {{ contact.email }}</p>
+  <p><strong>Address:</strong> {{ contact.address }}</p>
+</div>

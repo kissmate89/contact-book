@@ -22,7 +22,3 @@ const _appReducer = createReducer(
 )
 
 export const appReducer: ActionReducer<AppStateModel, Action> = (state, action) => _appReducer(state, action);
-
-
-
-
