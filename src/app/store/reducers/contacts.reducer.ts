@@ -10,7 +10,7 @@ const guidGenerator = () => {
   return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
 }
 
-export const initialState: ContactI[] = []
+export const initialState: ContactI[] = [];
 
 const _contactsReducer = createReducer(
   initialState,

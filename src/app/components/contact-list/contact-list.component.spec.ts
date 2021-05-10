@@ -7,7 +7,7 @@ describe('ContactListComponent', () => {
   let component: ContactListComponent;
   let fixture: ComponentFixture<ContactListComponent>;
   let store: MockStore;
-  const initialState = { contacts: null };
+  const initialState = { contacts: [], app: { view: 0, contactId: '' } };
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({

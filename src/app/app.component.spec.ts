@@ -1,16 +1,16 @@
 import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { provideMockStore } from '@ngrx/store/testing';
+
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
+  const initialState = { contacts: [], app: { view: 0, contactId: '' } };
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
       declarations: [
         AppComponent
       ],
+      providers: [ provideMockStore({ initialState }) ]
     }).compileComponents();
   });
 
@@ -25,11 +25,4 @@ describe('AppComponent', () => {
     const app = fixture.componentInstance;
     expect(app.title).toEqual('contact-book');
   });
-
-  // it('should render title', () => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   fixture.detectChanges();
-  //   const compiled = fixture.nativeElement;
-  //   expect(compiled.querySelector('.content span').textContent).toContain('contact-book app is running!');
-  // });
 });
